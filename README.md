@@ -2,8 +2,6 @@
 
 En este proyecto vamos a hacer seguimiento de las principales criptomonedas del mercado. Para ello, vamos a utilizar la API de CoinCap para obtener información sobre las criptomonedas y mostrarla en nuestra aplicación.
 
-url: [rest.coincap.io/v3/](rest.coincap.io/v3/)
-
 Aquí tenéis la documentación
 [https://pro.coincap.io/api-docs](https://pro.coincap.io/api-docs)
 
@@ -52,8 +50,20 @@ El componente `Home` es el componente principal de nuestra aplicación. Este com
 
 El componente `Coin` muestra información detallada sobre una criptomoneda en particular. Para ello, hace una petición a la API de CoinCap y muestra la información de la criptomoneda en un formato más detallado.
 
-url de ejemplo: [rest.coincap.io/v3/assets?apiKey=YourApiKey/bitcoin](rest.coincap.io/v3/assets?apiKey=YourApiKey/bitcoin)
-cambia la apikey por la vuestra. La encontraréis dentro de dashbard.
+Al necesitar la `APIKEY`para poder acceder a los datos, en este caso la configuración del fetch será algo similar a esto:
+
+```js
+const API_KEY = import.meta.env.VITE_API_URL;
+
+fetch("https://rest.coincap.io/v3/price/bysymbol/BTC"), {
+  headers: {
+    Authorization: `Bearer ${API_KEY}`
+  }
+})
+```
+
+Cambia la apikey por la vuestra. La encontraréis dentro de dashbard.
+
 [https://pro.coincap.io/dashboard](https://pro.coincap.io/dashboard)
 
 Si queréis usar esa KEY como variable de entorno podéis meterla en el archivo .env en la raiz del proyecto. Cualquier variable de entorno debe comenzar con VITE
