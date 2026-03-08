@@ -1,0 +1,130 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+  background: #0f172a; /* fondo oscuro */
+  color: #f1f5f9;
+  line-height: 1.5;
+}
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 30px;
+  background: linear-gradient(90deg, #0f172a, #1e293b);
+  box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+}
+
+nav h2 {
+  font-size: 1.8rem;
+  color: #0ea5e9;
+}
+
+nav a {
+  color: #f1f5f9;
+  text-decoration: none;
+  margin-left: 25px;
+  font-weight: 500;
+  transition: color 0.2s;
+}
+
+nav a:hover {
+  color: #0ea5e9;
+}
+
+.home h1,
+.favorites h1,
+.coin-detail h1 {
+  text-align: center;
+  margin: 30px 0 20px;
+  font-size: 2rem;
+  color: #0ea5e9;
+}
+
+.coins-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  padding: 0 20px 50px;
+}
+
+.coin-card {
+  background: #1e293b;
+  padding: 20px;
+  border-radius: 12px;
+  transition: transform 0.2s, background 0.2s;
+  cursor: pointer;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.coin-card:hover {
+  transform: translateY(-5px);
+  background: #334155;
+}
+
+.coin-card h3 {
+  color: #0ea5e9;
+  margin-bottom: 10px;
+}
+
+.coin-card p {
+  color: #f1f5f9;
+  font-size: 0.9rem;
+  margin-bottom: 5px;
+}
+
+.coin-card a {
+  text-decoration: none;
+}
+
+.coin-detail {
+  max-width: 600px;
+  margin: 20px auto 50px;
+  background: #1e293b;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0,0,0,0.4);
+  text-align: center;
+}
+
+.coin-detail p {
+  margin: 10px 0;
+  font-size: 1rem;
+}
+
+button {
+  padding: 12px 20px;
+  margin-top: 20px;
+  cursor: pointer;
+  border: none;
+  border-radius: 8px;
+  background: linear-gradient(90deg, #0ea5e9, #0284c7);
+  color: white;
+  font-weight: bold;
+  font-size: 1rem;
+  transition: all 0.3s;
+}
+
+button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+p {
+  text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+  .coins-list {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  }
+}
